@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <meta charset="UTF-8">
+     <link rel="stylesheet" type="text/css" href="style.css">
+ </head>
+
+<body>
+<div id="leftsec" style="float:left; height:100%; width:19%; border:1px solid black">
+
+    <div id="exploreFunctionDiv">
+        <p>
+            <form id="form1" action="http://127.0.0.1:8000/analyzer/" method="post">
+                <br>  <h3> Explore Function </h3>
+                Function Name: <input type="text" name="functionName" id="functionName">
+                <br> Depth: <input type="number" name="subGraphDepth" id="subGraphDepth" min="1" max="5">
+                <br> <input type="submit" value="Go">
+            </form>
+        </p>
+    </div>
+
+    <div id="searchFunctionsPathsDiv">
+    <p>
+        <form id="form2" action="http://127.0.0.1:8000/analyzer/" method="post">
+            <br>  <h3> Find all paths between two functions </h3>
+            Source Function: <input type="text" name="sourceFuncName" id="sourceFuncName">
+            <br> Destination Function: <input type="text" name="destFuncName" id="destFuncName">
+            <br> <input type="submit" value="Go">
+        </form>
+    </p>
+    </div>
+
+    <div id="searchResultsDiv">
+    </div>
+
+</div>
+<div id="rightSec" style="float:right; height:100%; width:80%;">
+    <svg width=100% height=100% id="graphHolder">
+        <g id="svg_g" transform="translate(20,20)"/>
+    </svg>
+    <style id="rightSecStyle">
+        svg {
+            overflow: hidden;
+        }
+
+        g.type-TK > rect {
+            fill: #00ffd0;
+        }
+
+        .node rect {
+            stroke: #333;
+            stroke-width: 1.5px;
+            fill: #fff;
+        }
+
+        .edgeLabel rect {
+            fill: #fff;
+        }
+
+        .edgePath {
+            stroke: #333;
+            stroke-width: 1.5px;
+            fill: none;
+        }
+    </style>
+</div>
+<div id="scripts">
+    <script src="jquery.js"></script>
+    <script src="d3.v3.js" charset="utf-8"></script>
+    <script src="dagre-d3.js" charset="utf-8"></script>
+    <script src="app.js" charset="utf-8"></script>
+</div>
+</body>
+</html>
