@@ -17,3 +17,4 @@ invoke process_graph.py with these input dot files and an output file.
 Create a django project and plug in the views.py, graphAnalyzer.py and urls.py and load this .dot file in the django app in views.py.
 Use the app.js and index.html to view and query the call-graph loaded.
 
+This is a proof of concept currently. Full functionality with integration with Linker is a work in progress.
